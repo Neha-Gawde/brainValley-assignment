@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         backgroundColor: theme.palette.background.paper,
-        border: '0px solid #000',
+        border: '0px',
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
     },
@@ -18,10 +18,8 @@ function DetailsModal(props) {
     const classes = useStyles();
     return (
         <div>
-            <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                className={classes.modal}
+            <Modal         
+                className={`modal-dialog-centered ${classes.modal}`}
                 open={open}
                 onClose={onClose}
                 closeAfterTransition
@@ -45,10 +43,10 @@ function DetailsModal(props) {
                         </div>
                         <ul>
                             <li>
-                                <a href={modalData.maps?.googleMaps} className="" >See on Google Maps</a>
+                                <a href={modalData.maps?.googleMaps} target="_blank" rel="noopener noreferrer" className="" >See on Google Maps</a>
                             </li>
                             <li>
-                                <a href={modalData.maps?.openStreetMaps} className="" >See on Open Street Maps</a>
+                                <a href={modalData.maps?.openStreetMaps} target="_blank" rel="noopener noreferrer" className="" >See on Open Street Maps</a>
                             </li>
                         </ul>
                     </div>
