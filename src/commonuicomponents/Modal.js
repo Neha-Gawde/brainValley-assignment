@@ -34,7 +34,7 @@ function DetailsModal(props) {
                     <div className={classes.paper}>
 
                         <h2 id="transition-modal-title">{modalData.name}</h2>
-                       
+
                         <div className='row aling-items-center'>
                             <div className='col'>
                                 <h6 className="card-subtitle mb-2 text-muted">Region :</h6>
@@ -44,13 +44,13 @@ function DetailsModal(props) {
                             </div>
                         </div>
                         <ul>
-                                        <li>
-                                            <a href={modalData.maps.googleMaps} className="" >See on Google Maps</a>
-                                        </li>
-                                        <li>
-                                            <a href={modalData.maps.openStreetMaps} className="" >See on Open Street Maps</a>
-                                        </li>
-                                    </ul> 
+                            <li>
+                                <a href={modalData.maps?.googleMaps} className="" >See on Google Maps</a>
+                            </li>
+                            <li>
+                                <a href={modalData.maps?.openStreetMaps} className="" >See on Open Street Maps</a>
+                            </li>
+                        </ul>
                     </div>
                 </Fade>
             </Modal>
