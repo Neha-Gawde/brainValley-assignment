@@ -26,10 +26,10 @@ function DetailsModal(props) {
                 </ModalHeader>
                 <ModalBody>
                     <div className='row aling-items-center'>
-                        <div className='col'>
+                        <div className='col-3'>
                             <h6 className="card-subtitle mb-2 text-muted">Region :</h6>
                         </div>
-                        <div className='col'>
+                        <div className='col-9' style={{marginLeft:"-50px"}}>
                             <h6 className="card-subtitle mb-2 text-muted">{modalData.region}</h6>
                         </div>
                     </div>
