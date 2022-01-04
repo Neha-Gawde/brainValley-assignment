@@ -30,7 +30,7 @@ function Card(props) {
                                 <div className="card-body">
                                     <div className='row'>
                                         <div className='col-4'>
-                                            <img src={el.coatOfArms.png ? el.coatOfArms.png : el.coatOfArms.svg} className="card-image" />
+                                            <img src={el.flags.png ? el.flags.png : el.flags.svg} className="card-image" />
                                         </div>
                                         <div className='col-8 align-items-center'>
                                             <div className='col'>

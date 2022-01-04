@@ -46,7 +46,7 @@ function LandingPage() {
     }
     const handleData = (searchstring) => {
         // console.log(noOfCountries,"noraml counter");
-        console.log(noOfCountriesForSearch,"search counter");
+        // console.log(noOfCountriesForSearch,"search counter");
         var dataToshow = searchstring === "" ? paginatrionData(noOfCountries, Totaldata) : [];
         var dataAfterSearched = searchstring !== "" ? paginatrionData(noOfCountriesForSearch,getSearchData()) : [];
         if(searchstring === "") {
@@ -87,6 +87,7 @@ function LandingPage() {
                 setFilterData(dataAfterSearched)
             }
         }
+        console.log(filterData)
     }
     const handleShowMore = () => {   
         setNoOfCountries(noOfCountries + 20)
