@@ -21,8 +21,8 @@ function Card(props) {
     //const dataToshow = paginatrionData(noOfCountries, data);
   
     return (
-        <div className="container">
-            <div className="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 country-div">
+        <div className="container-fluid mx-0">
+            <div className="row row-cols-8 row-cols-xs-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-6 country-div">
                 {data.length > 0 &&
                     data.map((el,i)=>(
                         <div className="col justify-content-center d-flex mb-3" key={i}>

@@ -112,6 +112,18 @@ function LandingPage() {
             {isShowMoreForSearch &&
                 <button type="button" className="btn btn-secondary btn-md mt-2" onClick={()=>{handleShowMoreForSearch()}}>Show More</button>
             }
+            {/* <div className="container-fluid ">
+                <div className="row row-cols-8">
+                    <div className="col">Column</div>
+                    <div className="col">Column</div>
+                    <div className="col">Column</div>
+                    <div className="col">Column</div>
+                    <div className="col">Column</div>
+                    <div className="col">Column</div>
+                    <div className="col">Column</div>
+                    <div className="col">Column</div>
+                </div>
+            </div> */}
         </div>
     )
 }
