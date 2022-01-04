@@ -49,7 +49,7 @@
   width: 70px;
 }
 .country-div{
-  height: 470px;
+  height: 80vh;
   width: inherit;
   overflow-x: hidden;
   overflow-y: scroll;
