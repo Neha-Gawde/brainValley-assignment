@@ -22,7 +22,7 @@ function LandingPage() {
     const [filterData, setFilterData] = useState([]);
     useEffect(() => {
         handleData(searchstring)
-    }, [Totaldata, searchstring, noOfCountries, noOfCountriesForSearch, TotalCountAfterSearch, TotalCount]);
+    }, [Totaldata, searchstring, noOfCountries, noOfCountriesForSearch, TotalCount, totalCountriesAfterSearch,TotalCountAfterSearch]);
 
     function paginatrionData(n, data) {
         const array = [...data];
@@ -41,11 +41,12 @@ function LandingPage() {
             }
         )
         TotalCountAfterSearch = searchedDataList.length
+        // console.log(searchedDataList)
         return searchedDataList
     }
     const handleData = (searchstring) => {
         // console.log(noOfCountries,"noraml counter");
-        // console.log(noOfCountriesForSearch,"search counter");
+        console.log(noOfCountriesForSearch,"search counter");
         var dataToshow = searchstring === "" ? paginatrionData(noOfCountries, Totaldata) : [];
         var dataAfterSearched = searchstring !== "" ? paginatrionData(noOfCountriesForSearch,getSearchData()) : [];
         if(searchstring === "") {
@@ -53,37 +54,39 @@ function LandingPage() {
             setIsShowMoreForSearch(false);
             setNoOfCountriesForSearch(20);
  
-            if(noOfCountries < TotalCount){
+            if(noOfCountries < TotalCount) {
                 setIsShowMore(true)
-            }else if(noOfCountries === TotalCount){
+            }else if(noOfCountries === TotalCount) {
                 setIsShowMore(false);
                 setNoOfCountries(TotalCount)
-            }else if(noOfCountries > TotalCount){
-                if(dataToshow.length > 0){
+            }else if(noOfCountries > TotalCount) {
+                if(dataToshow.length > 0) {
                     setNoOfCountries(TotalCount)
                 }
                 setIsShowMore(false)
             }
-        }else if(searchstring !== ""){
+        } else if(searchstring !== "") {
             console.log(TotalCountAfterSearch)
             setIsShowMore(false);
-            setNoOfCountries(20)
-            setFilterData(dataAfterSearched)
-            if(noOfCountriesForSearch < TotalCountAfterSearch){
+            setNoOfCountries(20);
+            // setFilterData(dataAfterSearched)
+            
+            if(noOfCountriesForSearch < TotalCountAfterSearch) {
                 setIsShowMoreForSearch(true);
                 setTotalCountriesAfterSearch(TotalCountAfterSearch)
-            }else if (noOfCountriesForSearch === TotalCountAfterSearch){
+                setFilterData(dataAfterSearched)
+            } else if (noOfCountriesForSearch === TotalCountAfterSearch) {
                 setIsShowMoreForSearch(false);
                 setNoOfCountriesForSearch(TotalCountAfterSearch);
                 setTotalCountriesAfterSearch(TotalCountAfterSearch)
-            }else if(noOfCountriesForSearch > TotalCountAfterSearch){
+                setFilterData(dataAfterSearched)
+            } else if(noOfCountriesForSearch > TotalCountAfterSearch) {
                 setIsShowMoreForSearch(false);
-                setNoOfCountriesForSearch(TotalCountAfterSearch)
+                //setNoOfCountriesForSearch(TotalCountAfterSearch)
                 setTotalCountriesAfterSearch(TotalCountAfterSearch);
+                setFilterData(dataAfterSearched)
             }
-            
         }
-        console.log(filterData, noOfCountries)
     }
     const handleShowMore = () => {   
         setNoOfCountries(noOfCountries + 20)

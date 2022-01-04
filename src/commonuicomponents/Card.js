@@ -17,7 +17,7 @@ function Card(props) {
     const onClose = () => {
         setOpen(false)
     }
-    console.log(modalData)
+    // console.log(modalData)
     //const dataToshow = paginatrionData(noOfCountries, data);
   
     return (

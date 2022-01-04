@@ -6,28 +6,47 @@ const slice = createSlice({
   name: 'country',
   initialState:{
     countriesData: [],
-    totalCount: 0
+    States: [],
+    totalCount: 0,
+    totalStatesCount: 0
   },
   reducers: {
     getReceivedCountriesData:(country, action) => {
         country.countriesData = action.payload;
         country.totalCount = action.payload.length
-    }
+    },
+    getReceivedStatesData:(country, action) => {
+      country.States = action.payload;
+      country.totalStatesCount = action.payload.length
+  }
   },
 })
 
 // Action creators are generated for each case reducer function
 export const { 
-    getReceivedCountriesData
+    getReceivedCountriesData,
+    getReceivedStatesData
 } = slice.actions
 
 //custome actions
 export const fectchCountryData = () =>(dispatch, getState) => {
+  let data ={}
     return dispatch(
         apiCallBegan({
             url: "https://restcountries.com/v3.1/all",
             onSuccess: getReceivedCountriesData.type,
-           
+    
+        })
+    )
+
+}
+export const fectchStateData = () =>(dispatch, getState) => {
+  let data ={}
+    return dispatch(
+        apiCallBegan({
+            url: "https://reststates.com/v3.1/all",
+            onSuccess: getReceivedStatesData.type,
+        
         })
     )
 
